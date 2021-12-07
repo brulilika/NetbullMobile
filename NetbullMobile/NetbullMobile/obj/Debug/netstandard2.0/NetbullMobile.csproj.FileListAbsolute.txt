@@ -1,0 +1,15 @@
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\bin\Debug\netstandard2.0\NetbullMobile.deps.json
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\bin\Debug\netstandard2.0\NetbullMobile.dll
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\bin\Debug\netstandard2.0\ref\NetbullMobile.dll
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\bin\Debug\netstandard2.0\NetbullMobile.pdb
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\NetbullMobile.csproj.AssemblyReference.cache
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\NetbullMobile.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\NetbullMobile.AssemblyInfoInputs.cache
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\NetbullMobile.AssemblyInfo.cs
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\NetbullMobile.csproj.CoreCompileInputs.cache
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\NetbullMobile.dll
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\ref\NetbullMobile.dll
+C:\Users\Bruna Lika\source\repos\NetbullMobile\NetbullMobile\NetbullMobile\obj\Debug\netstandard2.0\NetbullMobile.pdb

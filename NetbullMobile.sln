@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetbullMobile.Android", "NetbullMobile\NetbullMobile.Android\NetbullMobile.Android.csproj", "{CF3BF052-489F-4746-A6CC-10DC916791E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetbullMobile", "NetbullMobile\NetbullMobile\NetbullMobile.csproj", "{6AF03C04-D4E0-4387-8F28-D3F3C21C439C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF3BF052-489F-4746-A6CC-10DC916791E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF3BF052-489F-4746-A6CC-10DC916791E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF3BF052-489F-4746-A6CC-10DC916791E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CF3BF052-489F-4746-A6CC-10DC916791E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF3BF052-489F-4746-A6CC-10DC916791E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF3BF052-489F-4746-A6CC-10DC916791E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6AF03C04-D4E0-4387-8F28-D3F3C21C439C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AF03C04-D4E0-4387-8F28-D3F3C21C439C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AF03C04-D4E0-4387-8F28-D3F3C21C439C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6AF03C04-D4E0-4387-8F28-D3F3C21C439C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AF03C04-D4E0-4387-8F28-D3F3C21C439C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AF03C04-D4E0-4387-8F28-D3F3C21C439C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5C09815-78CF-45C4-ACDA-020C6D47FAF7}
+	EndGlobalSection
+EndGlobal

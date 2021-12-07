@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6af03c04-d4e0-4387-8f28-d3f3c21c439c": {
+      "ProjectGuid": "6af03c04-d4e0-4387-8f28-d3f3c21c439c",
+      "DisplayName": "NetbullMobile",
+      "ColorIndex": 0
+    },
+    "cf3bf052-489f-4746-a6cc-10dc916791e8": {
+      "ProjectGuid": "cf3bf052-489f-4746-a6cc-10dc916791e8",
+      "DisplayName": "NetbullMobile.Android",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
