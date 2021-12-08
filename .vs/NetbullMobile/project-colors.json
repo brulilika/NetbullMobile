@@ -10,6 +10,11 @@
       "ProjectGuid": "cf3bf052-489f-4746-a6cc-10dc916791e8",
       "DisplayName": "NetbullMobile.Android",
       "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 2

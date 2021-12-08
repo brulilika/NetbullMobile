@@ -1,9 +1,11 @@
 ﻿using Acr.UserDialogs;
 using NetbullMobile.Service;
+using NetbullMobile.View;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace NetbullMobile.ViewModel
@@ -41,14 +43,21 @@ namespace NetbullMobile.ViewModel
                     await App.Current.MainPage.DisplayAlert("Atenção", "É obrigatório informar usuário e senha", "Ok");
                 else
                 {
-                    var loginViewmodel = new Model.LoginViewModel()
+                    var loginViewmodel = new Model.LoginRequestViewModel()
                     {
-                        user_nome = "Bruna",
-                        user_email = "brunalika@msn.com",
-                        user_accessKey = "123"
+                        user_nome = UserName,
+                        user_accessKey = Senha
                     };
                     var loginService = new LoginService();
-                    var teste = loginService.Login(loginViewmodel);
+                    var token = await loginService.Login(loginViewmodel);
+                    if (!string.IsNullOrEmpty(token))
+                    {
+                        Preferences.Set("Username", UserName);
+                        Preferences.Set("Password", Senha);
+                        App.Current.MainPage = new NavigationPage(new MenuPrincipalPage());
+                    }
+                    else
+                        await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível fazer o login. Verifique usuário e senha informado.", "Ok");
                 }
             }
             catch (Exception e)

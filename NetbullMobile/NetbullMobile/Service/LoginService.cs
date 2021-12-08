@@ -1,36 +1,70 @@
 ﻿using NetbullMobile.Model;
+using NetbullMobile.Model.APIViewModel;
 using NetbullMobile.Service.Interface;
 using Newtonsoft.Json;
 using Refit;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NetbullMobile.Service
 {
-    public class LoginService : ILoginService
+    public class LoginService
     {
-        HttpClient httpClient = new HttpClient();
-        string URL = "http://localhost:7035/";
+        
+        string URL = "http://192.168.0.18:7035/";
         public LoginService()
         {
 
         }
 
-
-        public async Task<LoginViewModel> Login(LoginViewModel loginViewModel)
+        public async Task<bool> Registrar(RegisterRequestViewModel registerRequestViewModel)
         {
-            
-            var api = RestService.For<ILoginService>(URL);
-            var user = await api.Login(loginViewModel);
-            return user;
+            try
+            {
+                var json = JsonConvert.SerializeObject(registerRequestViewModel);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpClient client = new HttpClient();
+
+                URL = $"{URL}Conta/v1/registrar";
+                var resp = await client.PostAsync(URL, content);
+
+                if (!resp.IsSuccessStatusCode)
+                    return false;
+
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
         }
 
-        public Task<LoginViewModel> Registrar([Body] LoginViewModel loginViewModel)
+        public async Task<string> Login(LoginRequestViewModel loginViewModel)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var json = JsonConvert.SerializeObject(loginViewModel);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpClient client = new HttpClient();
+
+                URL = $"{URL}Conta/v1/login";
+                var resp = await client.PostAsync(URL, content);
+
+                if (!resp.IsSuccessStatusCode)
+                    return null;
+
+                var login = JsonConvert.DeserializeObject<LoginReturnViewModel>(resp.Content.ReadAsStringAsync().Result);
+                return login.Token;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
