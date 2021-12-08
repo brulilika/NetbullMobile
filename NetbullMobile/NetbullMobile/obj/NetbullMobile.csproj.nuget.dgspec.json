@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruna Lika\\source\\repos\\NetbullMobile\\NetbullMobile\\NetbullMobile\\NetbullMobile.csproj": {}
+    "C:\\Users\\Bruna Lika\\Desktop\\NetbullMobile\\NetbullMobile\\NetbullMobile\\NetbullMobile.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruna Lika\\source\\repos\\NetbullMobile\\NetbullMobile\\NetbullMobile\\NetbullMobile.csproj": {
+    "C:\\Users\\Bruna Lika\\Desktop\\NetbullMobile\\NetbullMobile\\NetbullMobile\\NetbullMobile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruna Lika\\source\\repos\\NetbullMobile\\NetbullMobile\\NetbullMobile\\NetbullMobile.csproj",
+        "projectUniqueName": "C:\\Users\\Bruna Lika\\Desktop\\NetbullMobile\\NetbullMobile\\NetbullMobile\\NetbullMobile.csproj",
         "projectName": "NetbullMobile",
-        "projectPath": "C:\\Users\\Bruna Lika\\source\\repos\\NetbullMobile\\NetbullMobile\\NetbullMobile\\NetbullMobile.csproj",
+        "projectPath": "C:\\Users\\Bruna Lika\\Desktop\\NetbullMobile\\NetbullMobile\\NetbullMobile\\NetbullMobile.csproj",
         "packagesPath": "C:\\Users\\Bruna Lika\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruna Lika\\source\\repos\\NetbullMobile\\NetbullMobile\\NetbullMobile\\obj\\",
+        "outputPath": "C:\\Users\\Bruna Lika\\Desktop\\NetbullMobile\\NetbullMobile\\NetbullMobile\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bruna Lika\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,11 +40,27 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.2.0.561, )"
+            },
+            "Microsoft.Net.Http": {
+              "target": "Package",
+              "version": "[2.2.29, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Refit": {
+              "target": "Package",
+              "version": "[6.1.15, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
