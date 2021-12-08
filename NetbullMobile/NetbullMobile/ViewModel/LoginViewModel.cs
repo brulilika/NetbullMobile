@@ -15,14 +15,14 @@ namespace NetbullMobile.ViewModel
         #region Propriedades
         private INavigation _navigation;
         private Command _loginCommand;
-        private Command _cadastroCommand;
+        private Command _cadastrarCommand;
         private string _userName;
         private string _senha;
         #endregion
 
-        public LoginViewModel()
+        public LoginViewModel(INavigation navigation)
         {
-
+            _navigation = navigation;
         }
 
         #region Encapsulamento
@@ -32,6 +32,7 @@ namespace NetbullMobile.ViewModel
 
         #region Commands
         public Command LoginCommand => _loginCommand ?? (_loginCommand = new Command(async () => await LoginCommandExecute()));
+        public Command CadastrarCommand => _cadastrarCommand ?? (_cadastrarCommand = new Command( () => CadastrarCommandExecute()));
         #endregion
 
         #region Métodos
@@ -64,6 +65,11 @@ namespace NetbullMobile.ViewModel
             {
                 await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível entrar no aplicativo", "Ok");
             }
+        }
+
+        private void CadastrarCommandExecute()
+        {
+            this._navigation.PushAsync(new CadastrarPage());
         }
         #endregion
     }

@@ -11,15 +11,14 @@ using Xamarin.Forms.Xaml;
 namespace NetbullMobile.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class CadastrarPage : ContentPage
     {
-        private LoginViewModel _loginViewModel;
-        public LoginPage()
+        private CadastrarViewModel _cadastrarViewModel;
+        public CadastrarPage()
         {
-            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
-            _loginViewModel = new LoginViewModel(this.Navigation);
-            BindingContext = _loginViewModel;
+            _cadastrarViewModel = new CadastrarViewModel(this.Navigation);
+            BindingContext = _cadastrarViewModel;
         }
     }
 }

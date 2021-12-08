@@ -16,7 +16,7 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Source="LogoNome.png" HeightRequest="180"/>
                 <Image Grid.Row="1" Source="LogoPrincipal.png" HeightRequest="150" Margin="0,-50,0,0"/>
-                <Label Grid.Row="2" Text="Login" HorizontalOptions="Center" FontAttributes="Bold" FontSize="40" TextColor="#a8c030"/>
+                <Label Grid.Row="2" Text="LOGIN" HorizontalOptions="Center" FontAttributes="Bold" FontSize="40" TextColor="#a8c030"/>
                 <Grid Grid.Row="3" Padding="10,0" BackgroundColor="Transparent" VerticalOptions="Center" Margin="0,-30,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -33,7 +33,11 @@
                     <component:CustomEntry Grid.Row="3" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#a8c030" HeightRequest="50" TextColor="Gray" IsPassword="True"
                                            BorderThickness="1" CornerRadius="5" Placeholder="Senha" PlaceholderColor="LightGray" VerticalTextAlignment="Center"
                                            Text="{Binding Senha}"/>
-                    <Label Grid.Row="4" Text="Criar conta!" HorizontalOptions="End" TextDecorations="Underline" FontSize="Medium"/>
+                    <Label Grid.Row="4" Text="Criar conta!" HorizontalOptions="End" TextDecorations="Underline" FontSize="Medium">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CadastrarCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
                 
                 <Button Grid.Row="4" Text="Entrar" VerticalOptions="End" BackgroundColor="#a8c030" CornerRadius="5" FontAttributes="Bold"

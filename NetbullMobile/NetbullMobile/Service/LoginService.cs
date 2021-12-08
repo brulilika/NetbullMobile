@@ -1,12 +1,8 @@
 ﻿using NetbullMobile.Model;
 using NetbullMobile.Model.APIViewModel;
-using NetbullMobile.Service.Interface;
 using Newtonsoft.Json;
-using Refit;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
