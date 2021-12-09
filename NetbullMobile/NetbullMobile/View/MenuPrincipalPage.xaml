@@ -3,10 +3,86 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NetbullMobile.View.MenuPrincipalPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Padding="10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="LogoPrincipal.png" HeightRequest="150"/>
+                <Image Grid.Column="1" Source="LogoNome.png" HeightRequest="150"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Cliente" FontSize="Large"/>
+                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a8c030" TextDecorations="Underline"/>
+                <CarouselView Grid.Row="1" ItemsSource="{Binding ListaClientes}" PeekAreaInsets="50" Loop="False" HeightRequest="150" >
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="#e6f99d" CornerRadius="10" Padding="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Frame Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start"
+                                           Padding="0" WidthRequest="90" BackgroundColor="{Binding TagColor}">
+                                        <Label Text="{Binding TagText}" Margin="5" HorizontalOptions="Center" TextColor="White"/>
+                                    </Frame>
+                                    <Image Grid.Row="1" Source="UserImage.png" HeightRequest="50"/>
+                                    <Label Grid.Row="2" Text="{Binding pessoa_nome}" FontSize="Medium" Margin="20,0,0,0"/>
+                                    <Label Grid.Row="3" Text="{Binding pessoa_documento}" FontSize="Medium" Margin="20,0,0,0"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Pedidos" FontSize="Large"/>
+                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a8c030" TextDecorations="Underline"/>
+                <ListView Grid.Row="1" ItemsSource="{Binding ListaPedido}" CachingStrategy="RecycleElementAndDataTemplate" RowHeight="90" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BackgroundColor="#e6f99d" CornerRadius="10" Padding="5" HasShadow="False" Margin="0,0,0,10" >
+                                    <Grid RowSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Frame Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start"
+                                           Padding="0" WidthRequest="90" BackgroundColor="{Binding TagColor}">
+                                            <Label Text="{Binding TagText}" Margin="5" HorizontalOptions="Center" TextColor="White"/>
+                                        </Frame>
+                                        <Label Grid.Row="0" Text="{Binding codigo}" FontSize="Medium" Margin="20,0,0,0"/>
+                                        <Label Grid.Row="1" Text="Uma descrição aqui" FontSize="Small" Margin="20,0,0,0"/>
+                                        <Label Grid.Row="2" Text="{Binding valorTotal}" FontSize="Medium" Margin="20,0,0,0" HorizontalOptions="End"/>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

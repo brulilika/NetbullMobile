@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetbullMobile.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace NetbullMobile.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPrincipalPage : ContentPage
     {
+        private MenuPrincipalViewModel _menuPrincipalViewModel;
         public MenuPrincipalPage()
         {
             InitializeComponent();
+            _menuPrincipalViewModel = new MenuPrincipalViewModel(this.Navigation);
+            BindingContext = _menuPrincipalViewModel;
         }
     }
 }

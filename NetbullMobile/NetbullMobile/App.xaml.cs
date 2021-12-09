@@ -11,7 +11,10 @@ namespace NetbullMobile
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new LoginPage())
+            {
+                BarBackgroundColor = Color.FromHex("#a8c030")
+            };
         }
 
         protected override void OnStart()

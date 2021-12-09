@@ -27,8 +27,8 @@
                                            BorderThickness="1" CornerRadius="5" Placeholder="Username" PlaceholderColor="LightGray" VerticalTextAlignment="Center"
                                            Text="{Binding UserName}"/>
                 <Label Grid.Row="2" Text="Email" FontSize="Medium"/>
-                <component:CustomEntry Grid.Row="3" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#a8c030" HeightRequest="50" TextColor="Gray" IsPassword="True"
-                                           BorderThickness="1" CornerRadius="5" Placeholder="Senha" PlaceholderColor="LightGray" VerticalTextAlignment="Center"
+                <component:CustomEntry Grid.Row="3" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#a8c030" HeightRequest="50" TextColor="Gray"
+                                           BorderThickness="1" CornerRadius="5" Placeholder="Email" PlaceholderColor="LightGray" VerticalTextAlignment="Center"
                                            Text="{Binding Email}"/>
                 <Label Grid.Row="4" Text="Senha" FontSize="Medium"/>
                 <component:CustomEntry Grid.Row="5" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#a8c030" HeightRequest="50" TextColor="Gray" IsPassword="True"

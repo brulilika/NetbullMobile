@@ -55,7 +55,11 @@ namespace NetbullMobile.ViewModel
                     {
                         Preferences.Set("Username", UserName);
                         Preferences.Set("Password", Senha);
-                        App.Current.MainPage = new NavigationPage(new MenuPrincipalPage());
+                        App.Current.MainPage = new NavigationPage(new MenuPrincipalPage())
+                        {
+                            BarBackgroundColor = Color.FromHex("#a8c030")
+                        };
+                    
                     }
                     else
                         await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível fazer o login. Verifique usuário e senha informado.", "Ok");

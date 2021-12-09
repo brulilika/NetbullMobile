@@ -1,4 +1,5 @@
-﻿using NetbullMobile.Model.APIViewModel;
+﻿using Acr.UserDialogs;
+using NetbullMobile.Model.APIViewModel;
 using NetbullMobile.Service;
 using System;
 using System.Threading.Tasks;
@@ -36,6 +37,7 @@ namespace NetbullMobile.ViewModel
         {
             try
             {
+                UserDialogs.Instance.Loading();
                 if (string.IsNullOrEmpty(UserName?.Trim()) || string.IsNullOrEmpty(Email?.Trim()) || string.IsNullOrEmpty(Senha?.Trim()))
                     await App.Current.MainPage.DisplayAlert("Atenção","É obrigatório informar Username, Email e Senha","OK");
                 else
@@ -57,8 +59,11 @@ namespace NetbullMobile.ViewModel
             }
             catch (Exception)
             {
-
                 await App.Current.MainPage.DisplayAlert("Atenção","Não foi possível registrar usuário","OK");
+            }
+            finally
+            {
+                UserDialogs.Instance.HideLoading();
             }
         }
         #endregion
