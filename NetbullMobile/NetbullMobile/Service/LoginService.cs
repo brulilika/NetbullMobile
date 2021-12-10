@@ -11,7 +11,7 @@ namespace NetbullMobile.Service
     public class LoginService
     {
         
-        string URL = "http://192.168.0.18:7035/";
+        string URL = "http://192.168.0.21:5000/";
         public LoginService()
         {
 

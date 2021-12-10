@@ -23,7 +23,11 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Cliente" FontSize="Large"/>
-                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a8c030" TextDecorations="Underline"/>
+                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a8c030" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ExpandeClientes}"/>
+                    </Label.GestureRecognizers>
+                </Label>
                 <CarouselView Grid.Row="1" ItemsSource="{Binding ListaClientes}" PeekAreaInsets="50" Loop="False" HeightRequest="150" >
                     <CarouselView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>

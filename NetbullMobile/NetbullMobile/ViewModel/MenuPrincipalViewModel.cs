@@ -1,8 +1,11 @@
 ﻿using NetbullMobile.Model;
+using NetbullMobile.Service;
+using NetbullMobile.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace NetbullMobile.ViewModel
@@ -12,6 +15,7 @@ namespace NetbullMobile.ViewModel
         #region Propriedades
         private INavigation _navigation;
         private Command _expandeClientes;
+        private ClienteService _clienteService;
         private List<Pessoa> _listaClientes;
         private List<Pedido> _listaPedido;
         #endregion
@@ -20,17 +24,12 @@ namespace NetbullMobile.ViewModel
         {
             try
             {
-                _listaClientes = new List<Pessoa>();
-                _listaClientes.Add(new Pessoa() { pessoa_id = 0, pessoa_nome = "Bruna", pessoa_documento = 1, pessoa_tipopessoa = EnumTipoPessoa.PessoaFisica });
-                _listaClientes.Add(new Pessoa() { pessoa_id = 1, pessoa_nome = "Lika", pessoa_documento = 2, pessoa_tipopessoa = EnumTipoPessoa.PessoaJuridica });
-                _listaClientes.Add(new Pessoa() { pessoa_id = 2, pessoa_nome = "Tamake", pessoa_documento = 3, pessoa_tipopessoa = EnumTipoPessoa.PessoaFisica });
-
-                _listaPedido = new List<Pedido>();
-                _listaPedido.Add(new Pedido() { codigo = "#1", valorTotal = "R$ 150,00", efetivado = false }) ;
-                _listaPedido.Add(new Pedido() { codigo = "#2", valorTotal = "R$ 200,00", efetivado = true });
-                _listaPedido.Add(new Pedido() { codigo = "#3", valorTotal = "R$ 250,00", efetivado = false });
-                _listaPedido.Add(new Pedido() { codigo = "#4", valorTotal = "R$ 300,00", efetivado = false });
-                _listaPedido.Add(new Pedido() { codigo = "#5", valorTotal = "R$ 350,00", efetivado = true });
+                _navigation = navigation;
+                ListaClientes = new List<Pessoa>();
+                ListaPedido = new List<Pedido>();
+                _clienteService = new ClienteService(); 
+                
+                CarregaDados();
             }
             catch (Exception e)
             {
@@ -45,9 +44,39 @@ namespace NetbullMobile.ViewModel
         #endregion
 
         #region Commands
+        public Command ExpandeClientes => _expandeClientes ?? (_expandeClientes = new Command(async () => await ExpandeClientesExecute()));
         #endregion
 
         #region Métodos
+        private async Task CarregaDados()
+        {
+            try
+            {
+                ListaClientes = (await _clienteService.BuscaClientes()).Take(5).ToList();
+
+                ListaPedido.Add(new Pedido() { codigo = "#1", valorTotal = "R$ 150,00", efetivado = false });
+                ListaPedido.Add(new Pedido() { codigo = "#2", valorTotal = "R$ 200,00", efetivado = true });
+                ListaPedido.Add(new Pedido() { codigo = "#3", valorTotal = "R$ 250,00", efetivado = false });
+                ListaPedido.Add(new Pedido() { codigo = "#4", valorTotal = "R$ 300,00", efetivado = false });
+                ListaPedido.Add(new Pedido() { codigo = "#5", valorTotal = "R$ 350,00", efetivado = true });
+            }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível iniciar página principal", "OK");
+            }
+        }
+
+        private async Task ExpandeClientesExecute()
+        {
+            try
+            {
+                await _navigation.PushAsync(new ListaClientesPage());
+            }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível abrir lista de clientes", "OK");
+            }
+        }
         #endregion
     }
 }

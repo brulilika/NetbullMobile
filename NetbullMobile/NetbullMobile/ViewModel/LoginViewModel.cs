@@ -40,7 +40,7 @@ namespace NetbullMobile.ViewModel
         {
             try
             {
-                if(string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Senha))
+                if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Senha))
                     await App.Current.MainPage.DisplayAlert("Atenção", "É obrigatório informar usuário e senha", "Ok");
                 else
                 {
@@ -62,7 +62,10 @@ namespace NetbullMobile.ViewModel
                     
                     }
                     else
+                    {
                         await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível fazer o login. Verifique usuário e senha informado.", "Ok");
+                        UserDialogs.Instance.HideLoading();
+                    }
                 }
             }
             catch (Exception e)

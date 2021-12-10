@@ -54,7 +54,6 @@ namespace NetbullMobile.ViewModel
                         await App.Current.MainPage.DisplayAlert("Atenção", "Usuário registrado com sucesso!", "OK");
                         await _navigation.PopAsync();
                     }
-
                 }
             }
             catch (Exception)

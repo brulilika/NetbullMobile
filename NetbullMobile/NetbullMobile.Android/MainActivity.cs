@@ -7,6 +7,7 @@ using Android.OS;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
+using Acr.UserDialogs;
 
 namespace NetbullMobile.Droid
 {
@@ -24,6 +25,7 @@ namespace NetbullMobile.Droid
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
                 Converters = { new StringEnumConverter() }
             };
+            UserDialogs.Init(this);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
