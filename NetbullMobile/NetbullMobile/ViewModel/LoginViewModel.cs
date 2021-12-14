@@ -57,7 +57,7 @@ namespace NetbullMobile.ViewModel
                         Preferences.Set("Password", Senha);
                         App.Current.MainPage = new NavigationPage(new MenuPrincipalPage())
                         {
-                            BarBackgroundColor = Color.FromHex("#a8c030")
+                            BarBackgroundColor = Color.FromHex("#212529")
                         };
                     
                     }

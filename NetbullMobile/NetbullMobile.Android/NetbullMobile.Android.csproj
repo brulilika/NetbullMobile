@@ -98,22 +98,25 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\LogoPrincipal.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\NetbullMobile\NetbullMobile.csproj">
       <Project>{2FB1BDAA-B693-4085-8925-206F67CFEA8B}</Project>
       <Name>NetbullMobile</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\LogoNome.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\MainBackground.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\UserImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\LogoNome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\LogoPrincipal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Netbull.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

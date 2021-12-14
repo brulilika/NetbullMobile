@@ -26,6 +26,8 @@ namespace NetbullMobile.View
         {
             if (sender is ListView lv) 
                 lv.SelectedItem = null;
+
+            _listaClienteViewModel.DetalheClientePage();
         }
     }
 }

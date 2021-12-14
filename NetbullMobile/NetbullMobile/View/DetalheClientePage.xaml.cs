@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetbullMobile.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace NetbullMobile.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetalheClientePage : ContentPage
     {
+        private DetalheClienteViewModel _detalheClienteViewModel;
         public DetalheClientePage()
         {
             InitializeComponent();
+            _detalheClienteViewModel = new DetalheClienteViewModel();
+            BindingContext = _detalheClienteViewModel;
         }
     }
 }

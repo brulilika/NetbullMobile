@@ -13,7 +13,7 @@ namespace NetbullMobile
 
             MainPage = new NavigationPage(new LoginPage())
             {
-                BarBackgroundColor = Color.FromHex("#a8c030")
+                BarBackgroundColor = Color.FromHex("#212529")
             };
         }
 

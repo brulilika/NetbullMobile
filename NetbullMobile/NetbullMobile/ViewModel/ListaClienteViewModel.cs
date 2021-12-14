@@ -1,5 +1,6 @@
 ﻿using NetbullMobile.Model;
 using NetbullMobile.Service;
+using NetbullMobile.View;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -39,7 +40,19 @@ namespace NetbullMobile.ViewModel
             }
             catch (Exception e)
             {
-                await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível iniciar lisdta de clientes", "OK");
+                await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível iniciar lista de clientes", "OK");
+            }
+        }
+
+        public async Task DetalheClientePage()
+        {
+            try
+            {
+                await _navigation.PushAsync(new DetalheClientePage());
+            }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível iniciar detalhe de cliente", "OK");
             }
         }
         #endregion

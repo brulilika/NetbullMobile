@@ -20,8 +20,8 @@ namespace NetbullMobile.Model
             get
             {
                 if (pessoa_tipopessoa == EnumTipoPessoa.PessoaFisica)
-                    return Color.FromHex("#770494");
-                return Color.FromHex("#a8c030");
+                    return Color.FromHex("#44d9e6");
+                return Color.FromHex("#44d9e6");
             }
         }
 

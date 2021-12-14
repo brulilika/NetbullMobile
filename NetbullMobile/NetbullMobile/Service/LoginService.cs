@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace NetbullMobile.Service
 {
-    public class LoginService
+    public class LoginService : BaseService
     {
-        
-        string URL = "http://192.168.0.21:5000/";
         public LoginService()
         {
 
@@ -25,7 +23,7 @@ namespace NetbullMobile.Service
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpClient client = new HttpClient();
 
-                URL = $"{URL}Conta/v1/registrar";
+                URL = $"{URL}api/Conta/registrar";
                 var resp = await client.PostAsync(URL, content);
 
                 if (!resp.IsSuccessStatusCode)
@@ -48,7 +46,7 @@ namespace NetbullMobile.Service
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpClient client = new HttpClient();
 
-                URL = $"{URL}Conta/v1/login";
+                URL = $"{URL}api/Conta/login";
                 var resp = await client.PostAsync(URL, content);
 
                 if (!resp.IsSuccessStatusCode)

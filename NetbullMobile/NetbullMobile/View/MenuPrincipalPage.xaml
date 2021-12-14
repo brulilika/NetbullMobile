@@ -23,7 +23,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Cliente" FontSize="Large"/>
-                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a8c030" TextDecorations="Underline">
+                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a9bccf" TextDecorations="Underline">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ExpandeClientes}"/>
                     </Label.GestureRecognizers>
@@ -34,7 +34,7 @@
                     </CarouselView.ItemsLayout>
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
-                            <Frame BackgroundColor="#e6f99d" CornerRadius="10" Padding="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Frame BackgroundColor="#a9bccf" CornerRadius="10" Padding="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Grid RowSpacing="0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
@@ -61,12 +61,12 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Pedidos" FontSize="Large"/>
-                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a8c030" TextDecorations="Underline"/>
+                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a9bccf" TextDecorations="Underline"/>
                 <ListView Grid.Row="1" ItemsSource="{Binding ListaPedido}" CachingStrategy="RecycleElementAndDataTemplate" RowHeight="90" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame BackgroundColor="#e6f99d" CornerRadius="10" Padding="5" HasShadow="False" Margin="0,0,0,10" >
+                                <Frame BackgroundColor="#a9bccf" CornerRadius="10" Padding="5" HasShadow="False" Margin="0,0,0,10" >
                                     <Grid RowSpacing="0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>

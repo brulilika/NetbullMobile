@@ -12,7 +12,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Image Grid.Row="0" Source="LogoPrincipal.png" HeightRequest="150" Margin="0,0,0,0"/>
-            <Label Grid.Row="2" Text="CADASTRAR-SE" HorizontalOptions="Center" FontAttributes="Bold" FontSize="40" TextColor="#a8c030"/>
+            <Label Grid.Row="2" Text="CADASTRAR-SE" HorizontalOptions="Center" FontAttributes="Bold" FontSize="40" TextColor="#212529"/>
             <Grid Grid.Row="3" Padding="10,0" BackgroundColor="Transparent" VerticalOptions="Center" Margin="0,-50,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -23,19 +23,19 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Username" FontSize="Medium"/>
-                <component:CustomEntry Grid.Row="1" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#a8c030" HeightRequest="50" TextColor="Gray"
+                <component:CustomEntry Grid.Row="1" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#212529" HeightRequest="50" TextColor="Gray"
                                            BorderThickness="1" CornerRadius="5" Placeholder="Username" PlaceholderColor="LightGray" VerticalTextAlignment="Center"
                                            Text="{Binding UserName}"/>
                 <Label Grid.Row="2" Text="Email" FontSize="Medium"/>
-                <component:CustomEntry Grid.Row="3" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#a8c030" HeightRequest="50" TextColor="Gray"
+                <component:CustomEntry Grid.Row="3" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#212529" HeightRequest="50" TextColor="Gray"
                                            BorderThickness="1" CornerRadius="5" Placeholder="Email" PlaceholderColor="LightGray" VerticalTextAlignment="Center"
                                            Text="{Binding Email}"/>
                 <Label Grid.Row="4" Text="Senha" FontSize="Medium"/>
-                <component:CustomEntry Grid.Row="5" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#a8c030" HeightRequest="50" TextColor="Gray" IsPassword="True"
+                <component:CustomEntry Grid.Row="5" Padding="13" BackgroundColor="#31FFFFFF" BorderColor="#212529" HeightRequest="50" TextColor="Gray" IsPassword="True"
                                            BorderThickness="1" CornerRadius="5" Placeholder="Senha" PlaceholderColor="LightGray" VerticalTextAlignment="Center"
                                            Text="{Binding Senha}"/>
             </Grid>
-            <Button Grid.Row="4" Text="CADASTRAR" VerticalOptions="End" BackgroundColor="#a8c030" CornerRadius="5" FontAttributes="Bold"
+            <Button Grid.Row="4" Text="CADASTRAR" VerticalOptions="End" BackgroundColor="#212529" CornerRadius="5" FontAttributes="Bold"
                         FontSize="Medium" TextColor="#eff3cd" Margin="20,0,20,10" Command="{Binding RegistrarCommand}"/>
         </Grid>
     </ContentPage.Content>
