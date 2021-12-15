@@ -1,57 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NetbullMobile.View.DetalheClientePage">
+             x:Class="NetbullMobile.View.DetalheClientePage"
+             Title="Detalhe Cliente">
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <Image Grid.Row="0" Source="UserImage.png" HeightRequest="130" Margin="0,10,0,0"/>
-            <Grid Grid.Row="1" Padding="10,10,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
-                <Label Grid.Row="0" Text="Detalhes" FontSize="Large" TextColor="#44d9e6"/>
-                <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="LightGray"/>
-                <Label Grid.Row="2" Text="Detalhes" FontSize="Small" >
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Nome: " TextColor="#44d9e6"/>
-                            <Span Text="Nome da pessoa" TextColor="#212529"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label Grid.Row="3" Text="Detalhes" FontSize="Small" >
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Documento: " TextColor="#44d9e6"/>
-                            <Span Text="Documento da pessoa" TextColor="#212529"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Image Grid.Row="0" Source="UserImage.png" HeightRequest="130" Margin="0,10,0,0"/>
+                <Grid Grid.Row="1" Padding="10,10,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
+                    <Label Grid.Row="0" Text="Detalhes" FontSize="Large" TextColor="#44d9e6"/>
+                    <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="LightGray"/>
+                    <Label Grid.Row="2" Text="Detalhes" FontSize="Medium" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Nome: " TextColor="#44d9e6"/>
+                                <Span Text="{Binding Pessoa.pessoa_nome}" TextColor="#212529"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="3" Text="Detalhes" FontSize="Medium" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Documento: " TextColor="#44d9e6"/>
+                                <Span Text="{Binding Pessoa.pessoa_documento}" TextColor="#212529"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="2" Padding="10,10,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
+                    <Label Grid.Row="0" Text="Endereços" FontSize="Large" TextColor="#44d9e6"/>
+                    <Frame Grid.Row="0" Padding="0" WidthRequest="50" HorizontalOptions="End" HasShadow="False" BackgroundColor="Transparent">
+                        <Label Text="+" HorizontalOptions="Center" FontSize="Title" TextColor="#44d9e6"/>
+                    </Frame>
+                    <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="LightGray"/>
+                    <ListView Grid.Row="2" ItemsSource="{Binding ListaEndereco}" RowHeight="110" Margin="5,0,5,0" CachingStrategy="RecycleElementAndDataTemplate" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame BackgroundColor="#a9bccf" CornerRadius="10" Padding="5" HasShadow="False" Margin="0,0,0,10" >
+                                        <Grid RowSpacing="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="8*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="IconEndereco.png" HeightRequest="200" Margin="5,0,0,0" VerticalOptions="Center"/>
+                                            <Grid Grid.Column="1" RowDefinitions="Auto,Auto,Auto">
+                                                <Label Grid.Row="0" Text="{Binding endereco_logradouro}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
+                                                <Label Grid.Row="1" Text="{Binding endereco_numero}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
+                                                <Label Grid.Row="2" Text="{Binding endereco_complemento}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+                <Grid Grid.Row="3" Padding="10,0,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
+                    <Label Grid.Row="0" Text="Telefones" FontSize="Large" TextColor="#44d9e6"/>
+                    <Frame Grid.Row="0" Padding="0" WidthRequest="50" HorizontalOptions="End" HasShadow="False" BackgroundColor="Transparent">
+                        <Label Text="+" HorizontalOptions="Center" FontSize="Title" TextColor="#44d9e6"/>
+                    </Frame>
+                    <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="LightGray"/>
+                    <ListView Grid.Row="2" ItemsSource="{Binding ListaTelefone}" RowHeight="110" Margin="5,0,5,0" CachingStrategy="RecycleElementAndDataTemplate">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame BackgroundColor="#a9bccf" CornerRadius="10" Padding="5" HasShadow="False" Margin="0,0,0,10" >
+                                        <Grid RowSpacing="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="8*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0" Source="IconTelefone.png" HeightRequest="200" Margin="5,0,0,0" VerticalOptions="Center"/>
+                                            <Grid Grid.Column="1" RowDefinitions="Auto,Auto,Auto">
+                                                <Label Grid.Row="0" Text="{Binding telefone_numero}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
             </Grid>
-            <Grid Grid.Row="2" Padding="10,10,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
-                <Label Grid.Row="0" Text="Endereços" FontSize="Large" TextColor="#44d9e6"/>
-                <Frame Grid.Row="0" Padding="0" WidthRequest="50" HorizontalOptions="End" HasShadow="False" BackgroundColor="Transparent">
-                    <Label Text="+" HorizontalOptions="Center" FontSize="Title" TextColor="#44d9e6"/>
-                </Frame>
-                <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="LightGray"/>
-                <!--<ListView>
-                    
-                </ListView>-->
-            </Grid>
-            <Grid Grid.Row="3" Padding="10,10,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
-                <Label Grid.Row="0" Text="Telefones" FontSize="Large" TextColor="#44d9e6"/>
-                <Frame Grid.Row="0" Padding="0" WidthRequest="50" HorizontalOptions="End" HasShadow="False" BackgroundColor="Transparent">
-                    <Label Text="+" HorizontalOptions="Center" FontSize="Title" TextColor="#44d9e6"/>
-                </Frame>
-                <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="LightGray"/>
-                <!--<ListView>
-                    
-                </ListView>-->
-            </Grid>
-            
-        </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

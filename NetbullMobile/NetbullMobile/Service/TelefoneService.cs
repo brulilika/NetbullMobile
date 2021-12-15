@@ -1,7 +1,9 @@
 ﻿using NetbullMobile.Model;
+using NetbullMobile.Model.APIViewModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -35,8 +37,8 @@ namespace NetbullMobile.Service
                 if (!resp.IsSuccessStatusCode)
                     return null;
 
-                var telefones = JsonConvert.DeserializeObject<List<Telefone>>(resp.Content.ReadAsStringAsync().Result);
-                return telefones;
+                var telefones = JsonConvert.DeserializeObject<GetTelefoneReturnViewModel>(resp.Content.ReadAsStringAsync().Result);
+                return telefones.telefones.ToList();
             }
             catch (Exception ex)
             {

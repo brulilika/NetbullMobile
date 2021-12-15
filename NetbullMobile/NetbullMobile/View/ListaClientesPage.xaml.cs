@@ -22,12 +22,11 @@ namespace NetbullMobile.View
             BindingContext = _listaClienteViewModel;
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void ListView_ItemSelected(object sender, ItemTappedEventArgs e)
         {
             if (sender is ListView lv) 
                 lv.SelectedItem = null;
-
-            _listaClienteViewModel.DetalheClientePage();
+            this.Navigation.PushAsync(new DetalheClientePage(e.Item as Pessoa));
         }
     }
 }

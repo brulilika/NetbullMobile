@@ -44,11 +44,11 @@ namespace NetbullMobile.ViewModel
             }
         }
 
-        public async Task DetalheClientePage()
+        public async Task DetalheClientePage(Pessoa pessoa)
         {
             try
             {
-                await _navigation.PushAsync(new DetalheClientePage());
+                await _navigation.PushAsync(new DetalheClientePage(pessoa));
             }
             catch (Exception)
             {

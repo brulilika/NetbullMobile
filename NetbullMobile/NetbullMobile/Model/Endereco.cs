@@ -13,7 +13,5 @@ namespace NetbullMobile.Model
 
         //ForeignKey Pessoa
         public int endereco_idpessoa { get; set; }
-
-        public bool enviado { get; set; }
     }
 }

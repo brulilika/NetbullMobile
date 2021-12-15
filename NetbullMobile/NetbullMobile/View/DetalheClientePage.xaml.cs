@@ -1,4 +1,5 @@
-﻿using NetbullMobile.ViewModel;
+﻿using NetbullMobile.Model;
+using NetbullMobile.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,10 @@ namespace NetbullMobile.View
     public partial class DetalheClientePage : ContentPage
     {
         private DetalheClienteViewModel _detalheClienteViewModel;
-        public DetalheClientePage()
+        public DetalheClientePage(Pessoa pessoa)
         {
             InitializeComponent();
-            _detalheClienteViewModel = new DetalheClienteViewModel();
+            _detalheClienteViewModel = new DetalheClienteViewModel(this.Navigation, pessoa);
             BindingContext = _detalheClienteViewModel;
         }
     }

@@ -1,7 +1,9 @@
 ﻿using NetbullMobile.Model;
+using NetbullMobile.Model.APIViewModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -21,6 +23,13 @@ namespace NetbullMobile.Service
         {
             try
             {
+
+                var t = new LoginRequestViewModel()
+                {
+                    user_nome = Preferences.Get("Username", ""),
+                    user_accessKey = Preferences.Get("Password", ""),
+                };
+
                 HttpClient client = new HttpClient();
                 var token = await new LoginService().Login(new LoginRequestViewModel()
                 {
@@ -35,8 +44,8 @@ namespace NetbullMobile.Service
                 if (!resp.IsSuccessStatusCode)
                     return null;
 
-                var enderecos = JsonConvert.DeserializeObject<List<Endereco>>(resp.Content.ReadAsStringAsync().Result);
-                return enderecos;
+                var enderecos = JsonConvert.DeserializeObject<GetEnderecoReturnViewModel>(resp.Content.ReadAsStringAsync().Result);
+                return enderecos.lista.OrderBy(ob=>ob.endereco_id).ToList();
             }
             catch (Exception ex)
             {

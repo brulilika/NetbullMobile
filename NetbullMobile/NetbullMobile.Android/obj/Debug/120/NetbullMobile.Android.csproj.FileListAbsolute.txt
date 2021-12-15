@@ -672,3 +672,5 @@ C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\ob
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\netbull.png
+C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\icontelefone.png
+C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\iconendereco.png
