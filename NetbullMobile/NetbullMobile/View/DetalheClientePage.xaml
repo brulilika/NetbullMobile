@@ -78,10 +78,9 @@
                                                 <ColumnDefinition Width="2*"/>
                                                 <ColumnDefinition Width="8*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Image Grid.Column="0" Source="IconTelefone.png" HeightRequest="200" Margin="5,0,0,0" VerticalOptions="Center"/>
-                                            <Grid Grid.Column="1" RowDefinitions="Auto,Auto,Auto">
-                                                <Label Grid.Row="0" Text="{Binding telefone_numero}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
-                                            </Grid>
+                                            <Image Grid.Column="0" Source="IconTelefone.png" HeightRequest="150" Margin="5,0,0,0" VerticalOptions="Center"/>
+                                            <Label Grid.Column="1" VerticalOptions="Center" Text="{Binding telefone_numero}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
+                                            
                                         </Grid>
                                     </Frame>
                                 </ViewCell>
