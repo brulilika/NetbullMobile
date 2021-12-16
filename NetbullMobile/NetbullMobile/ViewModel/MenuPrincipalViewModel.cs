@@ -16,6 +16,7 @@ namespace NetbullMobile.ViewModel
         #region Propriedades
         private INavigation _navigation;
         private Command _expandeClientes;
+        private Command _expandePedido;
         private ClienteService _clienteService;
         private ObservableCollection<Pessoa> _listaClientes;
         private ObservableCollection<Pedido> _listaPedido;
@@ -44,6 +45,7 @@ namespace NetbullMobile.ViewModel
 
         #region Commands
         public Command ExpandeClientes => _expandeClientes ?? (_expandeClientes = new Command(async () => await ExpandeClientesExecute()));
+        public Command ExpandePedido => _expandePedido ?? (_expandePedido = new Command(async () => await ExpandePedidoExecute()));
         #endregion
 
         #region Métodos
@@ -52,7 +54,7 @@ namespace NetbullMobile.ViewModel
             try
             {
                 ListaClientes = new ObservableCollection<Pessoa>((await _clienteService.BuscaClientes()).Take(5));
-                ListaPedido = new ObservableCollection<Pedido>( await new PedidoService().BuscaPedidos());
+                ListaPedido = new ObservableCollection<Pedido>((await new PedidoService().BuscaPedidos()).Take(5));
                 OnPropertyChanged("ListaClientes");
                 OnPropertyChanged("ListaPedido");
             }
@@ -67,6 +69,18 @@ namespace NetbullMobile.ViewModel
             try
             {
                 await _navigation.PushAsync(new ListaClientesPage());
+            }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível abrir lista de clientes", "OK");
+            }
+        }
+
+        private async Task ExpandePedidoExecute()
+        {
+            try
+            {
+                await _navigation.PushAsync(new ListaPedido());
             }
             catch (Exception)
             {

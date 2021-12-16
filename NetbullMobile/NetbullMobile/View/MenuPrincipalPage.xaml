@@ -61,7 +61,11 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Pedidos" FontSize="Large"/>
-                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a9bccf" TextDecorations="Underline"/>
+                <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a9bccf" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ExpandePedido}"/>
+                    </Label.GestureRecognizers>
+                </Label>
                 <CarouselView Grid.Row="1" ItemsSource="{Binding ListaPedido}" PeekAreaInsets="50" Loop="False" HeightRequest="150" >
                     <CarouselView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
