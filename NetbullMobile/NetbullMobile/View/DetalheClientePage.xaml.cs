@@ -21,5 +21,10 @@ namespace NetbullMobile.View
             _detalheClienteViewModel = new DetalheClienteViewModel(this.Navigation, pessoa);
             BindingContext = _detalheClienteViewModel;
         }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
     }
 }

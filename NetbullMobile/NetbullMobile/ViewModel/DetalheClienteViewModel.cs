@@ -35,7 +35,7 @@ namespace NetbullMobile.ViewModel
         #endregion
 
         #region Métodos
-        private async Task CarregaDados()
+        public async Task CarregaDados()
         {
             try
             {

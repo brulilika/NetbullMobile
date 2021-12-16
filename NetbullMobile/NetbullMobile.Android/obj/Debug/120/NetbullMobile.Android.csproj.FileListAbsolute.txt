@@ -65,10 +65,13 @@ C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\ob
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\mipmap-xxhdpi\launcher_foreground.png
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\mipmap-xxxhdpi\icon.png
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\mipmap-xxxhdpi\launcher_foreground.png
-C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\logoprincipal.png
-C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\logonome.png
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\mainbackground.png
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\userimage.png
+C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\logonome.png
+C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\logoprincipal.png
+C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\netbull.png
+C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\icontelefone.png
+C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\iconendereco.png
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\uploadflags.txt
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\resolvedassemblies.hash
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\android\assets\Acr.UserDialogs.dll
@@ -671,6 +674,4 @@ C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\ob
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\netbull.png
-C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\icontelefone.png
-C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\iconendereco.png
+C:\Users\Bruna Lika\Desktop\NetbullMobile\NetbullMobile\NetbullMobile.Android\obj\Debug\120\res\drawable\iconpedido.png

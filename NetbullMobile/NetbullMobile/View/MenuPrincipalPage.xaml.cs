@@ -20,5 +20,11 @@ namespace NetbullMobile.View
             _menuPrincipalViewModel = new MenuPrincipalViewModel(this.Navigation);
             BindingContext = _menuPrincipalViewModel;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _menuPrincipalViewModel.CarregaDados();
+        }
     }
 }

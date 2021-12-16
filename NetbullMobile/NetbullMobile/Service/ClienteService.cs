@@ -11,9 +11,8 @@ using Xamarin.Essentials;
 
 namespace NetbullMobile.Service
 {
-    public  class ClienteService
+    public  class ClienteService : BaseService
     {
-        string URL = "http://192.168.0.21:5000/";
         public ClienteService()
         {
         }

@@ -3,6 +3,7 @@ using NetbullMobile.Service;
 using NetbullMobile.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace NetbullMobile.ViewModel
         private INavigation _navigation;
         private Command _expandeClientes;
         private ClienteService _clienteService;
-        private List<Pessoa> _listaClientes;
-        private List<Pedido> _listaPedido;
+        private ObservableCollection<Pessoa> _listaClientes;
+        private ObservableCollection<Pedido> _listaPedido;
         #endregion
 
         public MenuPrincipalViewModel(INavigation navigation)
@@ -25,11 +26,9 @@ namespace NetbullMobile.ViewModel
             try
             {
                 _navigation = navigation;
-                ListaClientes = new List<Pessoa>();
-                ListaPedido = new List<Pedido>();
+                ListaClientes = new ObservableCollection<Pessoa>();
+                ListaPedido = new ObservableCollection<Pedido>();
                 _clienteService = new ClienteService(); 
-                
-                CarregaDados();
             }
             catch (Exception e)
             {
@@ -39,8 +38,8 @@ namespace NetbullMobile.ViewModel
         }
 
         #region Encapsulamento
-        public List<Pessoa> ListaClientes { get { return _listaClientes; } set { _listaClientes = value; OnPropertyChanged("ListaClientes"); } }
-        public List<Pedido> ListaPedido { get { return _listaPedido; } set { _listaPedido = value; OnPropertyChanged("ListaPedido"); } }
+        public ObservableCollection<Pessoa> ListaClientes { get { return _listaClientes; } set { _listaClientes = value; OnPropertyChanged("ListaClientes"); } }
+        public ObservableCollection<Pedido> ListaPedido { get { return _listaPedido; } set { _listaPedido = value; OnPropertyChanged("ListaPedido"); } }
         #endregion
 
         #region Commands
@@ -48,19 +47,16 @@ namespace NetbullMobile.ViewModel
         #endregion
 
         #region Métodos
-        private async Task CarregaDados()
+        public async Task CarregaDados()
         {
             try
             {
-                ListaClientes = (await _clienteService.BuscaClientes()).Take(5).ToList();
-
-                ListaPedido.Add(new Pedido() { codigo = "#1", valorTotal = "R$ 150,00", efetivado = false });
-                ListaPedido.Add(new Pedido() { codigo = "#2", valorTotal = "R$ 200,00", efetivado = true });
-                ListaPedido.Add(new Pedido() { codigo = "#3", valorTotal = "R$ 250,00", efetivado = false });
-                ListaPedido.Add(new Pedido() { codigo = "#4", valorTotal = "R$ 300,00", efetivado = false });
-                ListaPedido.Add(new Pedido() { codigo = "#5", valorTotal = "R$ 350,00", efetivado = true });
+                ListaClientes = new ObservableCollection<Pessoa>((await _clienteService.BuscaClientes()).Take(5));
+                ListaPedido = new ObservableCollection<Pedido>( await new PedidoService().BuscaPedidos());
+                OnPropertyChanged("ListaClientes");
+                OnPropertyChanged("ListaPedido");
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível iniciar página principal", "OK");
             }

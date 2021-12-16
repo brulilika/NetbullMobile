@@ -10,7 +10,7 @@ namespace NetbullMobile.Service
 
         public BaseService()
         {
-            URL = "http://192.168.0.21:5000/";
+            URL = "http://192.168.0.21:7035/";
         }
     }
 }

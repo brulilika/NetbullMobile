@@ -62,30 +62,32 @@
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Text="Pedidos" FontSize="Large"/>
                 <Label Grid.Row="0" Text="Ver mais" FontSize="Small" HorizontalOptions="End" VerticalTextAlignment="End" TextColor="#a9bccf" TextDecorations="Underline"/>
-                <ListView Grid.Row="1" ItemsSource="{Binding ListaPedido}" CachingStrategy="RecycleElementAndDataTemplate" RowHeight="90" >
-                    <ListView.ItemTemplate>
+                <CarouselView Grid.Row="1" ItemsSource="{Binding ListaPedido}" PeekAreaInsets="50" Loop="False" HeightRequest="150" >
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <Frame BackgroundColor="#a9bccf" CornerRadius="10" Padding="5" HasShadow="False" Margin="0,0,0,10" >
-                                    <Grid RowSpacing="0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
-                                        <Frame Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start"
-                                           Padding="0" WidthRequest="90" BackgroundColor="{Binding TagColor}">
-                                            <Label Text="{Binding TagText}" Margin="5" HorizontalOptions="Center" TextColor="White"/>
-                                        </Frame>
-                                        <Label Grid.Row="0" Text="{Binding codigo}" FontSize="Medium" Margin="20,0,0,0"/>
-                                        <Label Grid.Row="1" Text="Uma descrição aqui" FontSize="Small" Margin="20,0,0,0"/>
-                                        <Label Grid.Row="2" Text="{Binding valorTotal}" FontSize="Medium" Margin="20,0,0,0" HorizontalOptions="End"/>
-                                    </Grid>
-                                </Frame>
-                            </ViewCell>
+                            <Frame BackgroundColor="#a9bccf" CornerRadius="10" Padding="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Frame Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start"
+                                           Padding="0" WidthRequest="120" BackgroundColor="{Binding TagColor}">
+                                        <Label Text="{Binding TagText}" Margin="5" HorizontalOptions="Center" TextColor="White"/>
+                                    </Frame>
+                                    <Image Grid.Row="1" Source="IconPedido.png" HeightRequest="50"/>
+                                    <Label Grid.Row="2" Text="{Binding pedido_id}" FontSize="Medium" Margin="20,0,0,0"/>
+                                    <Label Grid.Row="3" Text="{Binding ValorFormatado}" FontSize="Medium" Margin="20,0,0,0"/>
+                                </Grid>
+                            </Frame>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
             </Grid>
         </Grid>
     </ContentPage.Content>
