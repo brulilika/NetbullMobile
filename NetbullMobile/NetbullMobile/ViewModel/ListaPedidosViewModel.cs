@@ -39,7 +39,7 @@ namespace NetbullMobile.ViewModel
             }
             catch (Exception e)
             {
-                await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível iniciar página lista de produtos", "OK");
+                await App.Current.MainPage.DisplayAlert("Atenção", "Não foi possível iniciar página lista de pedidos", "OK");
             }
         }
         #endregion
