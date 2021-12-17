@@ -1,4 +1,5 @@
-﻿using NetbullMobile.ViewModel;
+﻿using NetbullMobile.Model;
+using NetbullMobile.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace NetbullMobile.View
         {
             if (sender is ListView lv)
                 lv.SelectedItem = null;
+            this.Navigation.PushAsync(new DetalhePedidoPage(e.Item as Pedido));
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NetbullMobile.View.DetalhePedidoPage">
+             x:Class="NetbullMobile.View.DetalhePedidoPage"
+             Title="Detalhe Pedido">
     <ContentPage.Content>
         <ScrollView>
             <Grid>
@@ -18,27 +19,43 @@
                     <Label Grid.Row="2" Text="Detalhes" FontSize="Medium" >
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Nome: " TextColor="#44d9e6"/>
-                                <Span Text="{Binding Pessoa.pessoa_nome}" TextColor="#212529"/>
+                                <Span Text="Código: " TextColor="#44d9e6"/>
+                                <Span Text="{Binding Pedido.pedido_id}" TextColor="#212529"/>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Grid.Row="3" Text="Detalhes" FontSize="Medium" >
+                    <Label Grid.Row="3" FontSize="Medium" >
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Documento: " TextColor="#44d9e6"/>
-                                <Span Text="{Binding Pessoa.pessoa_documento}" TextColor="#212529"/>
+                                <Span Text="Horário: " TextColor="#44d9e6"/>
+                                <Span Text="{Binding Pedido.pedido_time}" TextColor="#212529"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="4" FontSize="Medium" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="End: " TextColor="#44d9e6"/>
+                                <Span Text="{Binding Endereco.EnderecoFormatado}" TextColor="#212529"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Row="5" FontSize="Medium" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Complemento: " TextColor="#44d9e6"/>
+                                <Span Text="{Binding Endereco.endereco_complemento}" TextColor="#212529"/>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
                 </Grid>
                 <Grid Grid.Row="2" Padding="10,10,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
-                    <Label Grid.Row="0" Text="Endereços" FontSize="Large" TextColor="#44d9e6"/>
+                    <Label Grid.Row="0" Text="Itens" FontSize="Large" TextColor="#44d9e6"/>
                     <Frame Grid.Row="0" Padding="0" WidthRequest="50" HorizontalOptions="End" HasShadow="False" BackgroundColor="Transparent">
                         <Label Text="+" HorizontalOptions="Center" FontSize="Title" TextColor="#44d9e6"/>
                     </Frame>
                     <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="LightGray"/>
-                    <ListView Grid.Row="2" ItemsSource="{Binding ListaEndereco}" RowHeight="110" Margin="5,0,5,0" CachingStrategy="RecycleElementAndDataTemplate" >
+                    <ListView Grid.Row="2" ItemsSource="{Binding ListaItem}" RowHeight="110" Margin="5,0,5,0" CachingStrategy="RecycleElementAndDataTemplate" ItemTapped="ListView_ItemSelected" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -48,11 +65,11 @@
                                                 <ColumnDefinition Width="2*"/>
                                                 <ColumnDefinition Width="8*"/>
                                             </Grid.ColumnDefinitions>
-                                            <Image Grid.Column="0" Source="IconEndereco.png" HeightRequest="200" Margin="5,0,0,0" VerticalOptions="Center"/>
-                                            <Grid Grid.Column="1" RowDefinitions="Auto,Auto,Auto">
-                                                <Label Grid.Row="0" Text="{Binding endereco_logradouro}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
-                                                <Label Grid.Row="1" Text="{Binding endereco_numero}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
-                                                <Label Grid.Row="2" Text="{Binding endereco_complemento}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
+                                            <Image Grid.Column="0" Source="IconItem.png" HeightRequest="200" Margin="5,0,0,0" VerticalOptions="Center"/>
+                                            <Grid Grid.Column="1" RowDefinitions="Auto,Auto,Auto" >
+                                                <Label Grid.Row="0" Text="{Binding item_id}" FontSize="Medium" Margin="20,0,0,0" HorizontalOptions="End" LineBreakMode="TailTruncation"/>
+                                                <Label Grid.Row="1" Text="{Binding QuantidadeFormatado}" FontSize="Medium" Margin="20,0,0,0" HorizontalOptions="End" LineBreakMode="TailTruncation"/>
+                                                <Label Grid.Row="2" Text="{Binding ValorFormatado}" FontSize="Medium" Margin="20,0,0,0" HorizontalOptions="End" LineBreakMode="TailTruncation"/>
                                             </Grid>
                                         </Grid>
                                     </Frame>
@@ -61,33 +78,6 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </Grid>
-                <Grid Grid.Row="3" Padding="10,0,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
-                    <Label Grid.Row="0" Text="Telefones" FontSize="Large" TextColor="#44d9e6"/>
-                    <Frame Grid.Row="0" Padding="0" WidthRequest="50" HorizontalOptions="End" HasShadow="False" BackgroundColor="Transparent">
-                        <Label Text="+" HorizontalOptions="Center" FontSize="Title" TextColor="#44d9e6"/>
-                    </Frame>
-                    <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="LightGray"/>
-                    <ListView Grid.Row="2" ItemsSource="{Binding ListaTelefone}" RowHeight="110" Margin="5,0,5,0" CachingStrategy="RecycleElementAndDataTemplate">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Frame BackgroundColor="#a9bccf" CornerRadius="10" Padding="5" HasShadow="False" Margin="0,0,0,10" >
-                                        <Grid RowSpacing="0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="2*"/>
-                                                <ColumnDefinition Width="8*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Image Grid.Column="0" Source="IconTelefone.png" HeightRequest="150" Margin="5,0,0,0" VerticalOptions="Center"/>
-                                            <Label Grid.Column="1" VerticalOptions="Center" Text="{Binding telefone_numero}" FontSize="Medium" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
-
-                                        </Grid>
-                                    </Frame>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </Grid>
-
             </Grid>
         </ScrollView>
     </ContentPage.Content>

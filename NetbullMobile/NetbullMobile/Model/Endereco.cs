@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,5 +14,14 @@ namespace NetbullMobile.Model
 
         //ForeignKey Pessoa
         public int endereco_idpessoa { get; set; }
+
+        [Ignore]
+        public string EnderecoFormatado
+        {
+            get
+            {
+                return $"{endereco_logradouro}, {endereco_numero}";
+            }
+        }
     }
 }

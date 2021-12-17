@@ -34,7 +34,7 @@
                     </Label>
                 </Grid>
                 <Grid Grid.Row="2" Padding="10,10,10,0" RowDefinitions="Auto,Auto,Auto,Auto">
-                    <Label Grid.Row="0" Text="Itens" FontSize="Large" TextColor="#44d9e6"/>
+                    <Label Grid.Row="0" Text="Enderecos" FontSize="Large" TextColor="#44d9e6"/>
                     <Frame Grid.Row="0" Padding="0" WidthRequest="50" HorizontalOptions="End" HasShadow="False" BackgroundColor="Transparent">
                         <Label Text="+" HorizontalOptions="Center" FontSize="Title" TextColor="#44d9e6"/>
                     </Frame>

@@ -5,13 +5,10 @@ using System.Text;
 
 namespace NetbullMobile.Model.APIViewModel
 {
-    public class GetPedidoUsuarioViewModel
+    public class GetItemReturnViewModel
     {
-
-        public IEnumerable<Pedido> pedidos { get; set; }
         public HttpStatusCode status { get; set; }
+        public IEnumerable<Item> itens { get; set; }
         public object[] error { get; set; }
-        
     }
-
 }
